@@ -774,11 +774,9 @@ else:
 
 qPOSwells, all_wells = plate_info_auto(plate_format)
 
-c1, c2 = st.columns([1, 1])
-with c1:
-    target_ct = st.number_input("target ct", value=25.0, step=0.1,key = 'target ct value', help="Desired average Ct for qPOS")
-with c2:
-    qPOSFRC = st.number_input("qPOS well FRC", value=30000, step=100,key = 'qPOS well FRC', help="Desired qPOS well FRC")
+
+target_ct = st.number_input("target ct", value=25.0, step=0.1,key = 'target ct value', help="Desired average Ct for qPOS")
+
 
 c1, c2, c3 = st.columns([1, 1, 1])
 with c1:
