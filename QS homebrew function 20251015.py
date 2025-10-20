@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import string
 import numpy as np
+from scipy.optimize import curve_fit
 from scipy.stats import norm as scnorm
 import matplotlib.pyplot as plt
 import io, os
@@ -740,7 +741,7 @@ def plate_info_auto(plate_format: str) -> tuple[list[str], float]:
 
     return qpos_wells, all_wells
 
-    
+results_file = None    
 raw_file = None
 combined_file = None
 
@@ -763,7 +764,6 @@ if combined_file is not None:
 else:
     if not raw_file:
         st.error("No Raw Data file found (expected *_Raw Data_*.csv)")
-    if not (results_file and raw_file and multicomponent_file):
         st.stop()
 
     df      = load_quantstudio(raw_file)
