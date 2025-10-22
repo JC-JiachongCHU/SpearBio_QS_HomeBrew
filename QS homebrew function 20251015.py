@@ -974,8 +974,8 @@ def _qs_results_table(
     cols = [
         "Well", "Well Position", "Omit", "Sample", "Target", "Task",
         "Reporter", "Quencher", "Amp Status", "Amp Score", "Curve Quality",
-        "Result", "Cq", "Cq Conf", "Cq Mean", "Cq SD",
-        "Auto Th", "Thresh", "Auto B", "Baseline Start", "Baseline End"
+        "Result Quality Issues", "Cq", "Cq Confidence", "Cq Mean", "Cq SD",
+        "Auto Threshold", "Threshold", "Auto Baseline", "Baseline Start", "Baseline End"
     ]
     df_out = pd.DataFrame(rows_out, columns=cols)
     with np.errstate(invalid="ignore"):
